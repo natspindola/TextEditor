@@ -33,8 +33,13 @@ namespace TextEditor
             Console.WriteLine("------------------");
             string text = "";
 
+            do { //faz algo enquanto o usuário não pressionar o ESC
+                text += Console.ReadLine();
+                text += Environment.NewLine;
+            }
             while(Console.ReadKey().Key != ConsoleKey.Escape); //se a tecla for diferente do ESC a aplicação não fecha, continua salvando o que for digitado
 
+            Console.Write(text);
         }
     }
 }
