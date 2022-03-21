@@ -40,7 +40,7 @@ namespace TextEditor
             }
             while(Console.ReadKey().Key != ConsoleKey.Escape); //se a tecla for diferente do ESC a aplicação não fecha, continua salvando o que for digitado
 
-            Console.Write(text);
+            Salvar(text);
         }
 
         static void Salvar(string text) {
@@ -51,6 +51,10 @@ namespace TextEditor
             using(var file = new StreamWriter(path)) {
                 file.Write(text);
             }
+
+            Console.WriteLine($"Arquivo {path} salvo com sucesso");
+            Console.ReadLine();
+            Menu();
         }
     }
 }
