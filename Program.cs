@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace TextEditor
 {
@@ -40,6 +41,16 @@ namespace TextEditor
             while(Console.ReadKey().Key != ConsoleKey.Escape); //se a tecla for diferente do ESC a aplicação não fecha, continua salvando o que for digitado
 
             Console.Write(text);
+        }
+
+        static void Salvar(string text) {
+            Console.Clear();
+            Console.WriteLine("Qual caminho para salvar o arquivo?");
+            var path = Console.ReadLine(); //caminho para salvar o arquivo
+
+            using(var file = new StreamWriter(path)) {
+                file.Write(text);
+            }
         }
     }
 }
