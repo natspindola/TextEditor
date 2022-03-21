@@ -27,6 +27,14 @@ namespace TextEditor
         
         static void Abrir() { }
 
-        static void Editar() { }
+        static void Editar() { 
+            Console.Clear();
+            Console.WriteLine("Digite seu texto abaixo - ESC para sair");
+            Console.WriteLine("------------------");
+            string text = "";
+
+            while(Console.ReadKey().Key != ConsoleKey.Escape); //se a tecla for diferente do ESC a aplicação não fecha, continua salvando o que for digitado
+
+        }
     }
 }
